@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MovieContext } from "../context/MovieProvider";
 import { Link } from "react-router-dom";
 const Discover = () => {
   const { discover, configImageUrl } = useContext(MovieContext);
+
   return (
     <div>
       <div className="w-full min-h-auto xl:w-3/4 mx-auto p-3">
@@ -16,7 +17,9 @@ const Discover = () => {
                 <img src={configImageUrl + movie.poster_path} className="object-cover w-full h-full" alt={movie.title} />
               </div>
               <div className="p-2">
-                <Link to={`/detail-movie/${movie.id}`} ><h1 className="font-semibold text-sm xl:text-lg hover:text-slate-400">{movie.title}</h1></Link>
+                <Link to={`/detail-movie/${movie.id}`}>
+                  <h1 className="font-semibold text-sm xl:text-lg hover:text-slate-400">{movie.title}</h1>
+                </Link>
                 <p className="font-light text-xs text-slate-300 tracking-wide">{movie.release_date}</p>
                 <p className="font-light text-xs text-slate-300 tracking-wide">{movie.homepage}</p>
               </div>
@@ -24,6 +27,7 @@ const Discover = () => {
           );
         })}
       </div>
+      
     </div>
   );
 };

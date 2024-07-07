@@ -23,11 +23,13 @@ const Videos = ({ movie_id }) => {
 
   return (
     <div>
-      <div className="w-full min-h-auto overflow-hidden flex gap-x-3 scrollable scrollbar-thin p-3  overflow-x-scroll">
+      <div className="w-full min-h-auto overflow-hidden flex gap-x-3 scrollable scrollbar-thin p-10  overflow-x-scroll">
         {videos.slice(0, 5).map((video) => {
           return (
             <div key={video.id} className="shadow-sm shadow-white">
-              <iframe src={`https://youtube.com/embed/${video.key}`} title={video.name}  width="300" height="300"></iframe>
+              <div className="w-full md:w-60 min-h-auto overflow-hidden rounded-lg">
+              <iframe src={`https://youtube.com/embed/${video.key}`} title={video.name} ></iframe>
+              </div>
             </div>
           );
         })}

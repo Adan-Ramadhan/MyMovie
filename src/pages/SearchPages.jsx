@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { MovieContext } from "../context/MovieProvider";
 import { useParams } from "react-router-dom";
 import Headers from "../component/Headers";
+import Footer from "../component/Footer";
 
 const SearchPages = () => {
   const { query } = useParams();
@@ -48,6 +49,7 @@ const SearchPages = () => {
           );
         })}
       </div>
+        <Footer/>
     </>
   );
 };

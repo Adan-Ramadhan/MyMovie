@@ -5,7 +5,7 @@ const Discover = () => {
   const { discover, configImageUrl } = useContext(MovieContext);
 
   return (
-    <div>
+    <div className="mb-10">
       <div className="w-full min-h-auto xl:w-3/4 mx-auto p-3">
         <h1 className="text-2xl font-bold">Trending</h1>
       </div>

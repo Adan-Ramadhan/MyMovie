@@ -26,17 +26,17 @@ const Search = () => {
   return (
     <div>
       {/* for navbar mobile */}
-      <div className="w-full p-3 ">
-        <form onSubmit={handleSearch} className="flex items-center mb-4">
+      <div className="w-full p-3 md:flex place-items-center justify-between">
+        <form onSubmit={handleSearch} className="flex order-last items-center mb-4 md:mb-0">
           <input type="text" value={query} placeholder="Search..." onChange={handleInputChange} className="w-full rounded-bl-lg rounded-tl-lg px-3 py-2 border text-slate-700 " />
-          <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-tr-lg rounded-br-lg">
+          <button type="submit" className="px-4 py-2  bg-slate-600 text-white rounded-tr-lg rounded-br-lg">
             Search
           </button>
         </form>
 
-        <nav>
+        <nav >
           <ul>
-            <li>
+            <li className="font-semibold">
               <Link to="/">Home</Link>
             </li>
           </ul>

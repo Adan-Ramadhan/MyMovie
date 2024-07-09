@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Cast from "../provider/Cast";
 import Media from "../provider/Media";
 import Headers from "../component/Headers";
+import Footer from "../component/Footer";
 
 const DetailPages = () => {
   const { base_url, option, configImageUrl } = useContext(MovieContext);
@@ -74,6 +75,7 @@ const DetailPages = () => {
             <Cast movie_id={movie_id} />
             <Media movie_id={movie_id} />
           </div>
+          <Footer/>
         </div>
       ) : (
         <h1>Loading...</h1>

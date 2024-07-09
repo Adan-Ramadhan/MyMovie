@@ -3,6 +3,7 @@ import { MovieContext } from "../context/MovieProvider";
 import { useParams } from "react-router-dom";
 import Cast from "../provider/Cast";
 import Media from "../provider/Media";
+import Headers from "../component/Headers";
 
 const DetailPages = () => {
   const { base_url, option, configImageUrl } = useContext(MovieContext);
@@ -31,13 +32,16 @@ const DetailPages = () => {
   return (
     <>
       {detailMovie ? (
+
         <div className="w-full min-h-auto ">
-          <div className="w-full relative min-h-auto lg:h-[500px] overflow-hidden">
+            <Headers/>
+
+          <div className="w-full relative min-h-auto lg:h-[600px] overflow-hidden">
             <div className="w-full ">
               <img src={configImageUrl + detailMovie.backdrop_path} alt={detailMovie.title} className="object-cover xl:object-none xl:object-bottom" />
             </div>
 
-            <div className="absolute px-3 top-0 w-full h-full  bg-gradient-to-r from-slate-800 via-slate-800/70 to-slate-300/50">
+            <div className="absolute px-3 pt-5 top-0 w-full h-full  bg-gradient-to-r from-slate-800 via-slate-800/70 to-slate-300/50">
               <div className="flex place-items-center gap-x-3  mx-auto w-full  xl:px-0 xl:w-1/2 h-full">
                 <div>
                   <div className="w-80 md:w-60 h-auto hidden md:block rounded-lg overflow-hidden">

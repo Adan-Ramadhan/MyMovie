@@ -12,7 +12,6 @@ const Videos = ({ movie_id }) => {
         if (response.ok) {
           const data = await response.json();
           setVideos(data.results);
-          console.log(data.results);
         }
       } catch (error) {
         console.error("fail to fetch:", error);
@@ -20,6 +19,9 @@ const Videos = ({ movie_id }) => {
     };
     fetchData();
   }, []);
+
+
+
 
   return (
     <div>

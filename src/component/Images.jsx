@@ -13,12 +13,13 @@ const Images = ({ movie_id, isActive }) => {
         const data = await response.json();
         setPosters(data.posters);
         setBackdrops(data.backdrops);
-        console.log(data)
       }
     };
 
     fetchData();
   }, []);
+
+
 
   return (
     <div className="w-full min-h-auto overflow-hidden flex gap-x-3 scrollable scrollbar-thin p-10  overflow-x-scroll">

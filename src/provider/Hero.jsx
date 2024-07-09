@@ -57,12 +57,12 @@ const Hero = () => {
       <div className="flex transition-transform duration-300 cursor-grab" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {trending.map((movie) => {
           return (
-            <div key={movie.id} className="w-full  flex shrink-0">
+            <div key={movie.id} className="w-full min-h-auto flex shrink-0">
               <div className="w-full min-h-auto xl:h-[600px]">
-                <img src={configImageUrl + movie.backdrop_path} className="object-cover w-full min-h-auto xl:h-[600px]" />
+                <img src={configImageUrl + movie.backdrop_path}  />
               </div>
 
-              <div className="absolute flex flex-col justify-end xl:justify-center p-3 xl:p-10 w-full xl:w-1/2  h-full  bg-gradient-to-r from-black  ">
+              <div className="absolute flex flex-col justify-end xl:justify-center p-3 xl:p-10 w-full xl:w-1/2 h-full bg-gradient-to-r from-black  ">
                 <h1 className="font-bold text-xl md:text-3xl xl:text-8xl mb-3">{movie.title}</h1>
                 <p className="font-light text-xs md:text-sm xl:text-lg pr-20 tracking-wider flex place-items-center gap-x-2 mb-2">
                   <MdDateRange className="text-xs md:text-sm xl:text-lg" /> {movie.release_date}

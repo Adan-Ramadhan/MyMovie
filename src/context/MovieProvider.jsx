@@ -8,7 +8,8 @@ const MovieProvider = ({ children }) => {
 
   const [discover, setDiscover] = useState([]);
   const [trending, setTrending] = useState([]);
-
+  const [toprate, setToprate] = useState([]);
+  
   const option = {
     method: "GET",
     headers: {
@@ -45,9 +46,25 @@ const MovieProvider = ({ children }) => {
     };
     fetchDataTrending();
 
+
+    const fetchMovieTopRate = async () => {
+      try{
+
+        const response = await fetch(`${base_url}/movie/top_rated`, option)
+        if(response.ok){
+          const data = await response.json();
+          setToprate(data.results)
+        }
+      }catch(error){
+        console.error("fail to fetching dat movie top rate:", error)
+      }
+
+    }
+    fetchMovieTopRate();
+
   }, []);
 
-  return <MovieContext.Provider value={{ base_url, option, configImageUrl, discover, trending, }}>{children}</MovieContext.Provider>;
+  return <MovieContext.Provider value={{ base_url, option, configImageUrl, discover, trending, toprate}}>{children}</MovieContext.Provider>;
 };
 
 export default MovieProvider;

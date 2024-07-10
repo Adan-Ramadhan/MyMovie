@@ -12,10 +12,11 @@ const Discover = () => {
       <div className="w-full min-h-auto xl:w-3/4  xl:shadow-white  mx-auto gap-x-3 p-3 flex scrollable scrollbar-thin overflow-x-scroll">
         {discover.map((movie) => {
           return (
-            <div key={movie.id} className="w-full min-h-auto rounded-lg shadow-lg">
+            <div key={movie.id} className="w-full min-h-auto rounded shadow-sm shadow-white">
               <div className="w-48 h-60 xl:w-60 xl:h-80 overflow-hidden rounded-t-lg">
                 <img src={configImageUrl + movie.poster_path} className="object-cover w-full h-full" alt={movie.title} />
               </div>
+
               <div className="p-2">
                 <Link to={`/detail-movie/${movie.id}`}>
                   <h1 className="font-semibold text-sm xl:text-lg hover:text-slate-400">{movie.title}</h1>

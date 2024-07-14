@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { MovieContext } from "../context/MovieProvider";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Headers from "../component/Headers";
 import Footer from "../component/Footer";
 
@@ -12,11 +12,9 @@ const SearchPages = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log(query);
         const response = await fetch(`${base_url}/search/movie?query=${query}`, option);
         if (response.ok) {
           const data = await response.json();
-          console.log(data.results);
           setResults(data.results);
         }
       } catch (error) {
@@ -41,7 +39,9 @@ const SearchPages = () => {
                 </div>
               </div>
               <div className="p-3">
+                <Link to={`/detail-movie/${movie.id}`}>
                 <h1 className="text-xl md:text-2xl pb-1 font-bold">{movie.title}</h1>
+                </Link>
                 <p className="text-xs md:text-sm font-semibold text-slate-300 mb-3">{movie.release_date}</p>
                 <p className="text-xs md:text-sm">{movie.overview}</p>
               </div>

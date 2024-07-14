@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 
 const Toprate = () => {
   const { toprate, configImageUrl } = useContext(MovieContext);
-  console.log(toprate);
   return (
     <div className="w-full min-h-auto xl:w-3/4 mx-auto p-3">
       <h1 className="text-2xl font-bold">Top Rate Movie</h1>
 
-      <div className="w-full min-h-auto xl:w-3/4  xl:shadow-white  mx-auto gap-x-3 p-3 flex scrollable scrollbar-thin overflow-x-scroll">
+      <div className="w-full min-h-auto  xl:shadow-white  mx-auto gap-x-3 p-3 flex scrollable scrollbar-thin overflow-x-scroll">
         {toprate.map((movie) => {
           return (
             <div key={movie.id} className="w-full min-h-auto rounded-lg shadow-sm shadow-white">
